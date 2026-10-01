@@ -25,17 +25,10 @@ class _HomePageState extends State<HomePage> {
                 pinned: true,
                 forceElevated: innerBoxIsScrolled,
                 flexibleSpace: FlexibleSpaceBar(
-                  title: Text("abelom"),
+                  
                   background: Container(
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                            Colors.blue,
-                            Colors.purple,
-                          ],
-                        ),
+                      color: Colors.deepPurpleAccent
                   ),
                     child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -45,12 +38,13 @@ class _HomePageState extends State<HomePage> {
                             child: Icon(
                               Icons.person,
                               size: 50,
+                              
                             ),
                           ),
 
                       SizedBox(height: 16),
                       Text(
-                            'John Doe',
+                            'Abelom',
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
@@ -71,8 +65,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               bottom: TabBar(tabs:[
-                Tab(icon: Icon(Icons.grid_on),text: 'Posts',),
-                Tab(icon: Icon(Icons.person), text: 'Tagged',)
+                Tab(icon: Icon(Icons.grid_on,color: Colors.black,),text: 'posts',),
+                Tab(icon: Icon(Icons.person,color: Colors.black,), text: 'tagged',)
 
               ]),
 

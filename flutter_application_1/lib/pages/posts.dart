@@ -11,7 +11,30 @@ class _PostsState extends State<Posts> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return CustomScrollView(
+      key: PageStorageKey<String>("posts"),
+      slivers: [
+        SliverOverlapInjector(handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context)),
+        SliverList(
+          delegate: SliverChildBuilderDelegate((context,index){
+            return Card(
+               margin: const EdgeInsets.all(12),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    child: Text('${index + 1}'),
+                  ),
+                  title: Text('Post ${index + 1}'),
+                  subtitle: const Text(
+                    'This is an example profile post.',
+                  ),
+                ),
+            );
+          },
+          childCount: 30,
+          ),
+        )
+      ],
+
     
     );
   }
